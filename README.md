@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🛠️ Destroyer Password Generator 🛠️
+# 🛠️ Destroyer passwordslist Generator 🛠️
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Python](https://img.shields.io/badge/Python-3.x-blue.svg)](https://www.python.org/downloads/)
@@ -11,14 +11,14 @@
 
 ## 📝 Overview
 
-Welcome to the Destroyer Password Generator, an advanced Python tool designed to enhance digital security through personalized password generation. By leveraging user-provided information and customizable settings, this generator creates robust password combinations tailored to individual preferences, promoting strong password practices and bolstering online security.
+Welcome to the Destroyer wordlist Generator, a powerful tool crafted in Python for generating personalized password lists. Designed with versatility and security in mind, this script empowers users to create robust password combinations tailored to their specific needs, enhancing digital security practices and promoting password hygiene.
 
 ---
 
 ## 🚀 Key Features
 
 - **Interactive Input**: Engage in a user-friendly input process to supply relevant personal information for password customization.
-- **Advanced Combination Generation**: Utilize sophisticated algorithms to generate intricate password combinations based on provided details and configurable settings.
+- **Advanced Combination Generation**: Employ sophisticated algorithms to generate intricate password combinations using provided details and customizable settings.
 - **Output Customization**: Tailor the generated password lists to suit specific formatting preferences and filtering criteria.
 - **Leet Mode Integration**: Explore the innovative "leet mode" functionality, converting characters to leetspeak for enhanced password complexity and diversity.
 
@@ -29,19 +29,19 @@ Welcome to the Destroyer Password Generator, an advanced Python tool designed to
 1. **Clone the Repository:**
 
     ```bash
-    git clone https://github.com/destroyer-official/destroyer-password-generator.git
+    git clone https://github.com/destroyer-official/destroyer-wordlist-generator.git
     ```
 
 2. **Navigate to the Project Directory:**
 
     ```bash
-    cd destroyer-password-generator
+    cd destroyer-wordlist-generator
     ```
 
 3. **Execute the Script:**
 
     ```bash
-    python password_generator.py
+    python wordlist_generator.py
     ```
 
 4. **Follow the On-Screen Prompts to Provide Personal Information and Configure Password Generation Settings.**
