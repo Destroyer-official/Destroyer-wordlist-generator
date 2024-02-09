@@ -1,15 +1,8 @@
-import argparse
 import configparser
-import csv
 import functools
-import gzip
 import os
 import sys
-import urllib.error
-import urllib.parse
-import urllib.request
-import time
-from concurrent.futures import ProcessPoolExecutor
+
 import cProfile
 CONFIG = {}
 
@@ -27,9 +20,7 @@ def read_configuration(filename):
             "numto": config.getint("nums", "to"),
             "wcfrom": config.getint("nums", "wcfrom"),
             "wcto": config.getint("nums", "wcto"),
-            "threshold": config.getint("nums", "threshold"),
-            "alectourl": config.get("alecto", "alectourl"),
-            "dicturl": config.get("downloader", "dicturl"),
+            "threshold": config.getint("nums", "threshold")
         }
 
         leet = functools.partial(config.get, "leet")
