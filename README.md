@@ -11,14 +11,14 @@
 
 ## 📝 Overview
 
-Welcome to the Destroyer Password Generator, a powerful tool crafted in Python for generating personalized password lists. Designed with versatility and security in mind, this script empowers users to create robust password combinations tailored to their specific needs, enhancing digital security practices and promoting password hygiene.
+Welcome to the Destroyer Password Generator, an advanced Python tool designed to enhance digital security through personalized password generation. By leveraging user-provided information and customizable settings, this generator creates robust password combinations tailored to individual preferences, promoting strong password practices and bolstering online security.
 
 ---
 
 ## 🚀 Key Features
 
 - **Interactive Input**: Engage in a user-friendly input process to supply relevant personal information for password customization.
-- **Advanced Combination Generation**: Employ sophisticated algorithms to generate intricate password combinations using provided details and customizable settings.
+- **Advanced Combination Generation**: Utilize sophisticated algorithms to generate intricate password combinations based on provided details and configurable settings.
 - **Output Customization**: Tailor the generated password lists to suit specific formatting preferences and filtering criteria.
 - **Leet Mode Integration**: Explore the innovative "leet mode" functionality, converting characters to leetspeak for enhanced password complexity and diversity.
 
