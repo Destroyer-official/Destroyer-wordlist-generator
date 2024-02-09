@@ -2,8 +2,6 @@ import configparser
 import functools
 import os
 import sys
-
-import cProfile
 CONFIG = {}
 
 
@@ -280,7 +278,7 @@ def generate_wordlist_from_profile(profile):
                     ):
                         kbdss.append(kbds1 + kbds2 + kbds3)
     combination_naac = [profile["pet"], petup, profile["email"], emailup, profile["company"],
-                 companyup, profile["kids"], kidsup, profile["number"], numberup,]
+                        companyup, profile["kids"], kidsup, profile["number"], numberup,]
     combination_na = [
         profile["name"],
         profile["surname"],
@@ -361,10 +359,14 @@ def generate_wordlist_from_profile(profile):
     if profile["randnum"] == "y":
 
         combination_[12] = list(concatenate_strings(word, num_from, num_to))
-        combination_[13] = list(concatenate_strings(combination_naa, num_from, num_to))
-        combination_[14] = list(concatenate_strings(combination_naac, num_from, num_to))
-        combination_[15] = list(concatenate_strings(combination_naaw, num_from, num_to))
-        combination_[16] = list(concatenate_strings(combination_naak, num_from, num_to))
+        combination_[13] = list(concatenate_strings(
+            combination_naa, num_from, num_to))
+        combination_[14] = list(concatenate_strings(
+            combination_naac, num_from, num_to))
+        combination_[15] = list(concatenate_strings(
+            combination_naaw, num_from, num_to))
+        combination_[16] = list(concatenate_strings(
+            combination_naak, num_from, num_to))
         combination_[21] = list(concatenate_strings(reverse, num_from, num_to))
     combination_[17] = list(combine_strings(reverse, years))
     combination_[17] += list(combine_strings(reverse, years, "_"))
@@ -389,9 +391,12 @@ def generate_wordlist_from_profile(profile):
         komb006 = list(combine_strings(reverse, profile["spechars"]))
 
         komb00111 = list(combine_strings(profile["spechars"], combination_naa))
-        komb00222 = list(combine_strings(profile["spechars"], combination_naac))
-        komb00333 = list(combine_strings(profile["spechars"], combination_naaw))
-        komb00444 = list(combine_strings(profile["spechars"], combination_naak))
+        komb00222 = list(combine_strings(
+            profile["spechars"], combination_naac))
+        komb00333 = list(combine_strings(
+            profile["spechars"], combination_naaw))
+        komb00444 = list(combine_strings(
+            profile["spechars"], combination_naak))
         komb00555 = list(combine_strings(profile["spechars"], word))
         komb00666 = list(combine_strings(profile["spechars"], reverse))
     print("[+] Sorting list and removing duplicates...")
@@ -538,9 +543,7 @@ def main():
             print("[ERROR]: " + str(e))
     else:
         pass
-   
+
 
 if __name__ == "__main__":
-    cProfile.run("main()")
-
-
+    main()
