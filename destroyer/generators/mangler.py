@@ -1,7 +1,7 @@
 """
 Leetspeak & Mangling Engine
 ===========================
-Executes selective, phonetic, and full character substitution transforms.
+Executes selective, single-character, and full character substitution transforms.
 """
 
 from __future__ import annotations
@@ -18,15 +18,34 @@ class ManglerGenerator:
         self.cfg: AppConfig = config
         self.mode: str = mode.lower()
 
-    def _apply_selective_leet(self, token: str) -> str:
-        """Replace only high-frequency substitutions: e->3, a->@, o->0, i->1, s->$."""
+    def _apply_selective_leet(self, token: str) -> List[str]:
+        """
+        Generate high-probability selective mutations:
+        1. All light substitutions (e->3, a->@, o->0, i->1, s->$)
+        2. Individual single-letter substitutions (e.g. only 'a'->'@' or only 'o'->'0')
+        """
+        variants: Set[str] = set()
         light_map = {"e": "3", "a": "@", "o": "0", "i": "1", "s": "$"}
+
+        # 1. Full light conversion
         chars = list(token)
         for idx, char in enumerate(chars):
             cl = char.lower()
             if cl in light_map:
                 chars[idx] = light_map[cl]
-        return "".join(chars)
+        full_light = "".join(chars)
+        if full_light != token:
+            variants.add(full_light)
+
+        # 2. Individual letter class mutations
+        token_lower = token.lower()
+        for letter, replacement in light_map.items():
+            if letter in token_lower:
+                single_mutated = token_lower.replace(letter, replacement)
+                if single_mutated != token_lower:
+                    variants.add(single_mutated)
+
+        return list(variants)
 
     def _apply_full_leet(self, token: str) -> str:
         """Replace all characters present in configuration leet map."""
@@ -46,8 +65,7 @@ class ManglerGenerator:
         for token in self.base_tokens:
             mutations: Set[str] = set()
 
-            selective = self._apply_selective_leet(token)
-            if selective != token:
+            for selective in self._apply_selective_leet(token):
                 mutations.add(selective)
 
             if self.mode == "standard":
