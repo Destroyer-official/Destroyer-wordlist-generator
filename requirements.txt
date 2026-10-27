@@ -1,0 +1,4 @@
+# Destroyer Wordlist Generator (2027 Edition)
+# Core script runs on pure standard library (Python 3.8+)
+# Install rich for enhanced modern terminal UI and tables:
+rich>=13.0.0

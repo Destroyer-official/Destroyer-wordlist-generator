@@ -1,0 +1,42 @@
+{
+    "name": "alex",
+    "surname": "mercer",
+    "nick": "shadow",
+    "handles": [
+        "alexpwns",
+        "shadow_m"
+    ],
+    "email": "alex.mercer@cybercorp.internal",
+    "birthdate": "14051996",
+    "mobile": "9876543210",
+    "partner_name": "elena",
+    "partner_nick": "ellie",
+    "partner_birthdate": "22081998",
+    "guardian_name": "robert",
+    "guardian_nick": "bob",
+    "guardian_birthdate": "10021968",
+    "children_names": [
+        "leo"
+    ],
+    "pet_names": [
+        "thor",
+        "luna"
+    ],
+    "company": "cybercorp",
+    "company_acronym": "ccorp",
+    "department": "devops",
+    "domain": "cybercorp.internal",
+    "project_names": [
+        "apollo",
+        "titan"
+    ],
+    "target_url": "https://cybercorp.internal",
+    "city": "seattle",
+    "sports_team": "seahawks",
+    "keywords": [
+        "hacker",
+        "crypto",
+        "matrix",
+        "cloud"
+    ]
+}

@@ -1,0 +1,16 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Generated wordlists and rules
+*.rule
+*.txt
+!requirements.txt
+
+# Environment
+.venv/
+env/
+ENV/
+.idea/
+.vscode/
