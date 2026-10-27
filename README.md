@@ -80,21 +80,32 @@ To prevent Out-Of-Memory (OOM) conditions during large permutations, candidates 
 
 ---
 
-## 2. Installation & Requirements
+## 2. Installation & Execution
 
-Destroyer requires Python 3.8 or newer and uses the standard library by default.
+Destroyer requires Python 3.8 or newer and operates entirely on the standard library with zero mandatory external dependencies.
 
 ```bash
 git clone https://github.com/Destroyer-official/Destroyer-wordlist-generator.git
 cd Destroyer-wordlist-generator
 ```
 
-### Optional UI Dependency
-To enable enhanced terminal tables, install `rich`:
+### Execution Options
+You can run Destroyer directly using either entry point:
+
+```bash
+# Option A: Root script launcher
+python wordlist_generator.py -i
+
+# Option B: Direct module invocation
+python -m destroyer -i
+```
+
+### Optional Enhanced Terminal UI
+For styled terminal tables and progress displays, install `rich` (optional):
 ```bash
 pip install -r requirements.txt
 ```
-If `rich` is not installed, the tool automatically falls back to standard ANSI formatting.
+If `rich` is absent, Destroyer automatically falls back to standard ANSI formatting.
 
 ---
 
@@ -123,15 +134,15 @@ The application loads configuration parameters from `destroyer.cfg` via `configp
 
 ## 4. Command-Line Interface (CLI)
 
+The tool can be executed via the package CLI command `destroyer`, as a Python module (`python -m destroyer`), or via the backward-compatible root script (`python wordlist_generator.py`).
+
 ```
-usage: wordlist_generator.py [-h] [-i] [-p PROFILE] [-u URL] [-o OUTPUT]
-                             [-m {fast,standard,deep,passphrase}]
-                             [--min-len MIN_LEN] [--max-len MAX_LEN] [--nist]
-                             [--leet {off,light,standard}] [--no-corporate]
-                             [--hashcat-rules HASHCAT_RULES]
-                             [--hashcat-masks HASHCAT_MASKS]
-                             [--save-profile SAVE_PROFILE] [--no-banner]
-                             [--inspect]
+usage: destroyer [-h] [-i] [-p PROFILE] [-u URL] [-o OUTPUT] [-c CONFIG]
+                 [-m {fast,standard,deep,passphrase}] [--min-len MIN_LEN]
+                 [--max-len MAX_LEN] [--nist] [--leet {off,light,standard}]
+                 [--no-corporate] [--hashcat-rules HASHCAT_RULES]
+                 [--hashcat-masks HASHCAT_MASKS] [--john-rules JOHN_RULES]
+                 [--save-profile SAVE_PROFILE] [--no-banner] [--inspect]
 ```
 
 ### Argument Reference
@@ -141,7 +152,8 @@ usage: wordlist_generator.py [-h] [-i] [-p PROFILE] [-u URL] [-o OUTPUT]
 | `-i, --interactive` | Flag | `False` | Launch interactive terminal questionnaire. |
 | `-p, --profile` | `FILE` | `None` | Path to target reconnaissance JSON file. |
 | `-u, --url` | `URL` | `None` | Target HTTP/HTTPS endpoint to crawl for keywords. |
-| `-o, --output` | `FILE` | `passwords.txt` | Filepath for compiled candidate output. |
+| `-o, --output` | `FILE` | `passwords.txt` | Filepath for compiled candidate output (supports `.gz`). |
+| `-c, --config` | `FILE` | `None` | Path to custom INI configuration file. |
 | `-m, --mode` | `STRING` | `standard` | Generation depth: `fast`, `standard`, `deep`, or `passphrase`. |
 | `--min-len` | `INT` | `8` | Minimum candidate length filter. |
 | `--max-len` | `INT` | `64` | Maximum candidate length filter. |
@@ -150,6 +162,7 @@ usage: wordlist_generator.py [-h] [-i] [-p PROFILE] [-u URL] [-o OUTPUT]
 | `--no-corporate` | Flag | `False` | Disable organizational and directory rotation patterns. |
 | `--hashcat-rules` | `FILE` | `None` | Filepath to export a targeted Hashcat `.rule` file. |
 | `--hashcat-masks` | `FILE` | `None` | Filepath to export a targeted Hashcat `.hcmask` file. |
+| `--john-rules` | `FILE` | `None` | Filepath to export a targeted John the Ripper `.rules` file. |
 | `--save-profile` | `FILE` | `None` | Save questionnaire inputs to a JSON profile. |
 | `--no-banner` | Flag | `False` | Suppress terminal banner for UNIX pipeline integration. |
 | `--inspect` | Flag | `False` | Print top 50 generated entries to stdout upon completion. |

@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "destroyer-wordlist-generator"
+version = "3.0.0"
+authors = [
+  { name="Destroyer-Official" },
+]
+description = "Targeted wordlist and passphrase generator for security auditing and penetration testing"
+readme = "README.md"
+requires-python = ">=3.8"
+license = { text = "MIT" }
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Topic :: Security",
+]
+
+[project.optional-dependencies]
+ui = ["rich>=13.0.0"]
+
+[project.scripts]
+destroyer = "destroyer.cli:main"
